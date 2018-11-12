@@ -9,6 +9,7 @@ class Pokemon
     @name = name 
     @type = type
     @db = db
+    @hp = hp
     self.class.all << self 
   end 
   
