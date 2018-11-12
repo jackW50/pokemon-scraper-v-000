@@ -30,8 +30,5 @@ class Pokemon
     binding.pry
     db.execute("UPDATE pokemon SET hp = (?) WHERE pokemon.id = (?)", [new_hp, self.id])
   end 
-  
-  #all.each do |pokemon|
-    #Pokemon.save(pokemon.name, pokemon.type, 'db/pokemon.db')
     
 end
