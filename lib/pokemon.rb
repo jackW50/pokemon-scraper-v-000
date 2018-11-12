@@ -21,7 +21,7 @@ class Pokemon
   end 
   
   def self.find(id, database_connection)
-    binding.pry
+    #binding.pry
     array = database_connection.execute("SELECT * FROM pokemon WHERE pokemon.id = (?)", id).flatten
     self.new(id: array[0], name: array[1], type: array[2], db: database_connection)
   end 
