@@ -22,13 +22,11 @@ class Pokemon
   end 
   
   def self.find(id, database_connection)
-    #binding.pry
     array = database_connection.execute("SELECT * FROM pokemon WHERE pokemon.id = (?)", id).flatten
     self.new(id: array[0], name: array[1], type: array[2], db: database_connection, hp: array[3]) 
   end 
   
   def alter_hp(new_hp, db)
-    binding.pry
     db.execute("UPDATE pokemon SET hp = (?) WHERE pokemon.id = (?)", [new_hp, self.id])
   end 
     
