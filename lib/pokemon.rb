@@ -4,7 +4,7 @@ class Pokemon
   
   @@all = []
   
-  def initialize(id:, name:, type:, db:)
+  def initialize(id:, name:, type:, db:, hp: 60)
     @id = id
     @name = name 
     @type = type
@@ -22,7 +22,8 @@ class Pokemon
   
   def self.find(id, database_connection)
     #binding.pry
-    database_connection.execute("SELECT * FROM pokemon WHERE pokemon.id = (?)", id).flatten
+    array = database_connection.execute("SELECT * FROM pokemon WHERE pokemon.id = (?)", id)
+    self.new(id: )
   end 
   
   def alter_hp(new_hp, db)
